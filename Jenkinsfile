@@ -10,7 +10,10 @@ pipeline {
         }
         stage('terraform_intitialize') {
             steps {
-                sh 'terraform init'
+                sh """
+                terraform init
+                terraform apply 
+                """
             }
         }
     }
